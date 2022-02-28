@@ -13,13 +13,26 @@
 
     <fragment
         android:id="@+id/nav_terms"
-        android:name="android.reserver.projectc196v5.ui.gallery.GalleryFragment"
+        android:name="android.reserver.projectc196v5.ui.terms.TermFragment"
         android:label="@string/menu_terms"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_terms" />
 
     <fragment
         android:id="@+id/nav_courses"
-        android:name="android.reserver.projectc196v5.ui.slideshow.SlideshowFragment"
+        android:name="android.reserver.projectc196v5.ui.courses.CourseFragment"
         android:label="@string/menu_courses"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_courses" />
+
+    <fragment
+        android:id="@id/nav_assessments"
+        android:name="android.reserver.projectc196v5.ui.assessments.AssessmentFragment"
+        android:label="@string/menu_assessment"
+        tools:layout="@layout/fragment_assessments" />
+
+    <fragment
+        android:id="@id/nav_assessments"
+        android:name="android.reserver.projectc196v5.ui.settings.SettingsFragment"
+        android:label="@string/menu_assessment"
+        tools:layout="@layout/fragment_settings" />
+
 </navigation>

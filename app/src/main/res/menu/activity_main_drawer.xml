@@ -17,7 +17,7 @@
             android:icon="@drawable/ic_nav_courses"
             android:title="@string/menu_courses" />
         <item
-            android:id="@+id/nav_assessmentlist"
+            android:id="@+id/nav_assessments"
             android:icon="@drawable/ic_nav_assessment"
             android:title="@string/menu_assessment" />
         <item

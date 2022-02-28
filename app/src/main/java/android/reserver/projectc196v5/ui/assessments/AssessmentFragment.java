@@ -1,4 +1,4 @@
-package android.reserver.projectc196v5.ui.gallery;
+package android.reserver.projectc196v5.ui.assessments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.reserver.projectc196v5.databinding.FragmentGalleryBinding;
+import android.reserver.projectc196v5.databinding.FragmentAssessmentsBinding;
 
-public class GalleryFragment extends Fragment {
+public class AssessmentFragment extends Fragment {
 
-    private FragmentGalleryBinding binding;
+    private FragmentAssessmentsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
+        AssessmentViewModel assessmentViewModel =
+                new ViewModelProvider(this).get(AssessmentViewModel.class);
 
-        binding = FragmentGalleryBinding.inflate(inflater, container, false);
+        binding = FragmentAssessmentsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGallery;
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textAssessment;
+        assessmentViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
@@ -34,4 +34,5 @@ public class GalleryFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
 }
