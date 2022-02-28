@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ProjectC196V5</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Antonio Sierra</string>
+    <string name="nav_header_subtitle">Software Development - B.S.</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_terms">Terms</string>
+    <string name="menu_courses">Courses</string>
+    <string name="menu_assessment">Assessment</string>
+    <string name="menu_settings">Settings</string>
+</resources>
