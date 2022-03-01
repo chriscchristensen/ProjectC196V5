@@ -3,9 +3,11 @@ package android.reserver.projectc196v5.Database;
 import android.content.Context;
 import android.reserver.projectc196v5.DAO.AssessmentDAO;
 import android.reserver.projectc196v5.DAO.CourseDAO;
+import android.reserver.projectc196v5.DAO.NoteDAO;
 import android.reserver.projectc196v5.DAO.TermDAO;
 import android.reserver.projectc196v5.Entity.AssessmentEntity;
 import android.reserver.projectc196v5.Entity.CourseEntity;
+import android.reserver.projectc196v5.Entity.NotesEntity;
 import android.reserver.projectc196v5.Entity.TermEntity;
 
 import androidx.annotation.NonNull;
@@ -18,12 +20,13 @@ import java.sql.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {AssessmentEntity.class, CourseEntity.class, TermEntity.class}, version = 1)
+@Database(entities = {AssessmentEntity.class, CourseEntity.class, TermEntity.class, NotesEntity.class}, version = 1)
 
 public abstract class SchoolManagementDatabase extends RoomDatabase {
     public abstract TermDAO termDAO();
     public abstract CourseDAO courseDAO();
     public abstract AssessmentDAO assessmentDAO();
+    public abstract NoteDAO noteDAO();
     private static final int NUMBER_OF_THREADS = 4;
     /**
      * The Database write executor.
@@ -62,12 +65,14 @@ public abstract class SchoolManagementDatabase extends RoomDatabase {
                 TermDAO mTermDao = INSTANCE.termDAO();
                 CourseDAO mCourseDao = INSTANCE.courseDAO();
                 AssessmentDAO mAssessmentDao = INSTANCE.assessmentDAO();
+                NoteDAO mNoteDAO = INSTANCE.noteDAO();
 
                 // Start the app with a clean database every time.
                 // Not needed if you only populate on creation.
                 mTermDao.deleteAllTerms();
                 mCourseDao.deleteAllCourses();
                 mAssessmentDao.deleteAllAssessments();
+                mNoteDAO.deleteAllNotes();
 
                 TermEntity term = new TermEntity(1, "Sample Term", "2022-02-28", "2022-03-02");
                 mTermDao.insert(term);
@@ -77,6 +82,9 @@ public abstract class SchoolManagementDatabase extends RoomDatabase {
 
                 AssessmentEntity assessment = new AssessmentEntity(1, "Sample Assessment", "2022-03-02", 1, 1);
                 mAssessmentDao.insert(assessment);
+
+                NotesEntity note = new NotesEntity(1, "Sample Name", "Sample Text", 1);
+                mNoteDAO.insert(note);
             });
         }
     };
